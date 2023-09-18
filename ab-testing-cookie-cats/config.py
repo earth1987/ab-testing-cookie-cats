@@ -1,9 +1,9 @@
 # Special paths and variables that are used across the project
-def file_directory(PLATFORM):
-  """Returns file directory given platform."""
-  if PLATFORM == 'colab':
-      return '/content/drive/MyDrive/Data science jobs/2. Portfolio/3. NL2VIS/'
-  elif PLATFORM == 'hpc':
-      return "/mnt/scratch/users/adbz866/"
-  elif PLATFORM == 'laptop':
-      return 'C:/Users/billy/OneDrive/Documents/Python Scripts/1. Portfolio/1. NL2VIS/'
+def file_directory(TYPE):
+  """Returns file directory given file status"""
+  if TYPE == 'raw':
+      return 'C:/Users/billy/OneDrive/Documents/Python Scripts/1. Portfolio/ab-testing-cookie-cats/data/raw/'
+  elif TYPE == 'cleaned':
+      return 'C:/Users/billy/OneDrive/Documents/Python Scripts/1. Portfolio/ab-testing-cookie-cats/data/cleaned/'
+  elif TYPE == 'processed':
+      return 'C:/Users/billy/OneDrive/Documents/Python Scripts/1. Portfolio/ab-testing-cookie-cats/data/processed/'
