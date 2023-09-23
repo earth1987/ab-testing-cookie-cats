@@ -1,5 +1,6 @@
 """Custom code that gets used across more than notebook"""
 import pandas as pd
+from random import sample
 
 def perc_func(df, column):
     """Outputs the proportional breakdown of values for a given column in a dataframe."""
@@ -22,7 +23,15 @@ def retained_func(x, measure):
     df = df.reset_index(level='outcome').join(
         x.groupby(by=['version'])['userid'].count().rename('total'))
     df['perc'] = round(df['count'] / df['total'] * 100, 2)
-    
-    df = df.set_index('outcome', append=True).drop('total', axis=1)
-    df.columns = pd.MultiIndex.from_product([[measure], df.columns])
+    df = df.reset_index().pivot(index='outcome', columns='version', values='perc')
+    df['diff'] = df['gate_30'] - df['gate_40']
     return df
+
+
+def perm_func(x, n_A, n_B):
+    """Compute difference in metric after reconstruction of A/B from shuffled x"""
+    n = n_A + n_B
+    x = x.sample(frac = 1) # shuffle
+    idx_A = set(sample(range(n), n_A))
+    idx_B = set(range(n)) - idx_A
+    return x.loc[list(idx_A)].mean() - x.loc[list(idx_B)].mean()
