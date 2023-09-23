@@ -42,6 +42,8 @@ The following metrics are available and will be evaluated:
      align="centre" 
      width="500" />
 
+* Seven day retention rates are 0.82% higher for gate 30 players.
+* P-value: 0.0
 Neither the number of game rounds or the one day retention rate is significantly different between the two test groups. However, the seven day retention rate is significantly higher when the first barrier is set to gate 30. I would therefore reccomend the gate remains in this position.
 
 
