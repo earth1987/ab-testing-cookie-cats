@@ -2,14 +2,30 @@
 
 A/B testing, also known as split testing, is a widely used method in the gaming industry to optimize various aspects of computer games. The primary motivation is to make data-driven decisions that improve the overall player experience and maximize the game's success.
 
-# Scope
+## File structure
+
+<pre>
+|- notebooks/
+   |- stock_price_forecast.ipynb
+   |- figures/
+|- ab-testing-cookie-cats/
+   |- custom_funcs.py
+   |- config.py
+|- data/
+   |- raw/
+|- README.md
+</pre>
+
+## Scope
+
 All analysis will be conducted on data collected for the mobile puzzle game, Cookie Cats. In this classic "connect three" puzzle, players must strategically link tiles of identical colors to clear the board and advance through levels.
 
-# Experimental design
+## Experimental design
 
 In the game, players face time-based barriers or can opt for in-app purchases. We're analyzing an A/B test that shifted the initial barrier from level 30 to level 40 in Cookie Cats, focusing on its impact on player retention and game rounds.
 
 ## Hypothesis
+
 A two-way hypothesis test at a significance "alpha" level of 0.05 will be conducted.
 
 * **Null hypothesis**: Gate position has no impact on player retention/game rounds.
@@ -23,19 +39,6 @@ The following metrics are available and will be evaluated:
 1. **sum_gamerounds**: the number of game rounds played by the player during the first 14 days after install.
 2. **retention_1**: did the player come back and play 1 day after installing?
 3. **retention 7**: did the player come back and play 7 days after installing?
-
-## File structure
-<pre>
-|- notebooks/
-   |- stock_price_forecast.ipynb
-   |- figures/
-|- ab-testing-cookie-cats/
-   |- custom_funcs.py
-   |- config.py
-|- data/
-   |- raw/
-|- README.md
-</pre>
 
 ## Conclusion
 <img src="./notebooks/figures/7retention_sampling_distribution.png" 
